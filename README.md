@@ -24,24 +24,26 @@
   set -g window-status-style 'fg=color208,bg=color232' # 状态栏窗口颜色
   set -g window-status-format " #I  #W  " # 状态栏窗口显示内容
   set -g window-status-current-style "fg=color235,bg=color214" # 当前状态栏窗口颜色i
-  set -g status-right "#{echo} #(cat /sys/class/power_supply/BAT1/capacity)% | %A %Y-%m-%d %H:%M" # 状态栏右侧显示内容
-  set -g status-left "#{echo} #(whoami)@#{=20:pane_title} " # 状态栏左侧显示内容
+  set -g status-right "#{echo} #(cat /sys/class/power_supply/BAT1/capacity)% | %A %Y-%m-%d %H:%M"
+  set -g status-left "#{echo} #(whoami)@#{=20:pane_title} "
   
-  set -g automatic-rename on # 重命名
+  set -g automatic-rename on
   set -g renumber-windows on
   set -g set-titles on
+  set -g mouse on
   
-  set -g mouse on # 鼠标功能启用
-  set -g prefix2 C-a # ctrl b作为前缀键
-  
-  unbind '"' # unbind一些我不需要的东西
+  unbind '"'
   unbind '%'
   unbind C-b
   
-  bind r source-file ~/.tmux.conf # 用来快速测试.conf文件效果
+  set -g prefix 'C-a'
+  
+  bind r source-file ~/.tmux.conf
   ```
 最终效果，还是挺不错的，没有用到任何tmux之外的插件或是项目
 你只需要拥有tmux本体以及256色的终端支持即可(我用的是xterm-256color)
-![image](https://github.com/dbgbgtf1/dbgbgtf1/assets/149954065/776029ac-46ec-4771-8dbb-01bd5f3b79ef)
+(以及我把ctrl b的前缀改成了ctrl a，这样我在ssh服务器上的终端tmux时就不会把主机和服务器的tmux快捷键混用冲突了)
+![8fa0a02af61dbb7cff725b3a2b0efad4](https://github.com/dbgbgtf1/dbgbgtf1/assets/149954065/79c5a0e3-6f7c-4114-a48e-a9a8af6081fb)
+
 
   
