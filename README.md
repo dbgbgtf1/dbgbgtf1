@@ -18,32 +18,36 @@
   set -g status-left-length 200 # 状态栏左右长度
   set -g status-right-length 500
   
-  set -g status-style 'bg=color243,fg=color11' # 状态栏整体颜色
+  set -g status-style 'bg=color242,fg=color11' # 状态栏整体颜色
   set -g status-right-style 'fg=color172,bg=color232' # 状态栏右侧颜色
   set -g status-left-style 'fg=color36,bg=color255' # 状态栏左侧颜色
+  
   set -g window-status-style 'fg=color208,bg=color232' # 状态栏窗口颜色
   set -g window-status-format " #I  #W  " # 状态栏窗口显示内容
   set -g window-status-current-style "fg=color235,bg=color214" # 当前状态栏窗口颜色i
-  set -g status-right "#{echo} #(cat /sys/class/power_supply/BAT1/capacity)% | %A %Y-%m-%d %H:%M"
+  
+  set -g status-right " battery:#{echo} #(cat /sys/class/power_supply/BAT1/capacity)% | %A %Y-%m-%d %H:%M"
   set -g status-left "#{echo} #(whoami)@#{=20:pane_title} "
   
-  set -g automatic-rename on
+  set -g window-active-style 'bg=color234' #正在使用的窗口背景色略灰
+  set -g window-style 'bg=color232' #窗口背景色为纯黑
+  
+  set-option -g pane-active-border-style "bg=color23,fg=color255" # 窗口分割线
+  
+  set -g automatic-rename on #窗口重命名等等
   set -g renumber-windows on
   set -g set-titles on
   set -g mouse on
   
-  unbind '"'
+  unbind '"' #键位设置
   unbind '%'
   unbind C-b
-  
   set -g prefix 'C-a'
-  
-  bind r source-file ~/.tmux.conf
+  bind r source-file ~/.tmux.conf #ctrl+a r刷新tmux设置
   ```
 最终效果，还是挺不错的，没有用到任何tmux之外的插件或是项目
 你只需要拥有tmux本体以及256色的终端支持即可(我用的是xterm-256color)
 (以及我把ctrl b的前缀改成了ctrl a，这样我在ssh服务器上的终端tmux时就不会把主机和服务器的tmux快捷键混用冲突了)
-![8fa0a02af61dbb7cff725b3a2b0efad4](https://github.com/dbgbgtf1/dbgbgtf1/assets/149954065/79c5a0e3-6f7c-4114-a48e-a9a8af6081fb)
-
+![1713969675846](https://github.com/dbgbgtf1/dbgbgtf1/assets/149954065/469c8fad-1898-40c6-9a1a-97ca9b024f39)
 
   
