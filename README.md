@@ -2,7 +2,7 @@
 - 👀  I’m interested in Linux,c,c++,binary exploit,and some python stuff
 - 🌱  I’m currently learning python stuff and binary exploit
 - Contacts:  
--       wx:CALL_ME_DBG  
--       qq:88665013
--       blog:dbgtf.org
--       email:dudududumaxver@outlook.com  
+      wx:CALL_ME_DBG  
+      qq:88665013  
+      blog:dbgtf.org  
+      email:dudududumaxver@outlook.com  
